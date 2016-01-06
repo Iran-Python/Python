@@ -62,6 +62,10 @@ def send_voice(chat_id, voice, duration=None, reply_to_message_id=None):
 def send_location(chat_id, latitude, longitude, reply_to_message_id=None):
     pass
 
+
+def get_updates(offset=None, limit=None, timeout=None):
+    pass
+
 # chats
 def chat_info(chat_id):
     cid = peer(chat_id)

@@ -7,7 +7,6 @@ parameters = {('text', True)}
 description = 'Repeat a string.'
 action = 'typing'
 
-
 def run(msg):
     input = get_input(msg['text'])
 
