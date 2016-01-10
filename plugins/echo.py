@@ -1,16 +1,15 @@
-from polaris.utils import *
+from core.shared import *
 
 commands = {
     '^echo': {('text', True)}
 }
 description = 'Repeat a string.'
-action = 'typing'
 
-def run(msg):
-    input = get_input(msg.text)
+
+def run(m):
+    input = get_input(m.content)
 
     if not input:
-        doc = get_doc(commands, description)
-        return send_message(msg.cid, doc, markup=True)
+        return
 
-    send_message(msg.cid, input, markup=True)
+    send_msg(m, input)
