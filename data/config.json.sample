@@ -1,0 +1,14 @@
+{
+  "owner": 123456,
+  "keys": {
+    "bot_api_token": ""
+  },
+  "plugins": [
+    "echo"
+  ],
+  "ignore": {
+    "old_messages": true,
+    "media": false
+  },
+  "start": "/"
+}

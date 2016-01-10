@@ -1,0 +1,22 @@
+{
+  "123456": {
+    "first_name": null,
+    "last_name": null,
+    "username": null,
+    "tags": [
+      "owner",
+      "trusted",
+      "admin",
+      "globalmod",
+      "globalban",
+      "muted"
+    ],
+    "settings": {
+      "nick": null,
+      "league_of_legends_summoner": null,
+      "lastfm_username": null,
+      "nsfw": false,
+      "inline_captions": true
+    }
+  }
+}

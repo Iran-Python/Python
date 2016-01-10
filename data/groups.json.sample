@@ -1,0 +1,19 @@
+{
+    "-12345": {
+        "title": "sample group",
+        "description": "just a sample group",
+        "realm": null,
+        "rules": null,
+        "tags": [
+            "mod:123456",
+            "ban:9876543",
+            "policy:nobotapi",
+            "policy:noemptyusername",
+            "policy:antiterrorism",
+            "policy:floodprotect",
+            "policy:nolog",
+            "policy:nolist",
+            "policy:muted"
+        ]
+    }
+}
