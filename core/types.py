@@ -9,19 +9,20 @@ class Bot:
 class Config:
     class Settings:
         owner = None
-        keys = {}
+        keys = OrderedDict()
         plugins = []
-        ignore = {}
         start = '/'
 
-        def __init__(self, owner, keys, plugins, ignore, start):
+        def __init__(self, owner, keys, plugins, start):
             self.owner = owner
             self.keys = keys
             self.plugins = plugins
-            self.ignore = ignore
             self.start = start
 
     class Language:
+        message = OrderedDict()
+        error = OrderedDict()
+        plugins = OrderedDict()
         def __init__(self, message, error, plugins):
             self.message = message
             self.error = error

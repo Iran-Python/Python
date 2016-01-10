@@ -5,7 +5,6 @@ def init():
     users.load()
     groups.load()
 
-
 def inbox_listener():
     while (True):
         inbox.get()
