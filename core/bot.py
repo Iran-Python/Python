@@ -1,6 +1,5 @@
 from core.shared import *
 
-
 def init():
     config.load()
     users.load()

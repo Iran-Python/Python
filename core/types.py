@@ -1,13 +1,19 @@
 from core.shared import *
 
-
 class Bot:
-    def __init__(self, bindings):
+    def __init__(self, bindings=None, user=None):
         self.bindings = bindings
+        self.user = user
 
 
 class Config:
     class Settings:
+        owner = None
+        keys = {}
+        plugins = []
+        ignore = {}
+        start = '/'
+
         def __init__(self, owner, keys, plugins, ignore, start):
             self.owner = owner
             self.keys = keys
@@ -15,7 +21,7 @@ class Config:
             self.ignore = ignore
             self.start = start
 
-    class Locale:
+    class Language:
         def __init__(self, message, error, plugins):
             self.message = message
             self.error = error

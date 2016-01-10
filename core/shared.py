@@ -13,7 +13,7 @@ from datetime import datetime
 import os
 
 config = Config.Settings
-config = Config.Locale
+lang = Config.Language
 users = OrderedDict()
 groups = OrderedDict()
 
