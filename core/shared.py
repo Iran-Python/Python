@@ -1,14 +1,13 @@
 from core.utils import *
 from collections import OrderedDict
 from queue import Queue
-from core.types import Config
 
 bot = Bot
 
 config = Config.Config
+users = Config.Users
+groups = Config.Groups
 lang = Config.Language
-users = OrderedDict()
-groups = OrderedDict()
 
 inbox = Queue()
 outbox = Queue()
