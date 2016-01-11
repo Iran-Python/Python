@@ -2,15 +2,50 @@ from core.shared import *
 import json
 from datetime import datetime
 from collections import OrderedDict
+import importlib
 
 
 # Used to store the frontend module and the User data of the bot.
 class Bot:
-    frontend = None
-    user = None
+    frontend = importlib.import_module('core.frontend.none')
+    f = frontend
+    uid = None
+    first_name = None
+    last_name = None
+    username = None
+    photo = None
 
-    def __init__(self, frontend=None):
-        self.frontend = frontend
+    def set_frontend(self, frontend='none'):
+        self.frontend = importlib.import_module('core.frontend.' + frontend)
+        self.f = self.frontend
+
+
+# Defines the structure of the User objects.
+class User:
+    uid = None
+    first_name = None
+    last_name = None
+    username = None
+    photo = None
+
+    def __init__(self, uid, first_name, last_name, username, photo):
+        self.uid = uid
+        self.first_name = first_name
+        self.last_name = last_name
+        self.username = username
+        self.photo = photo
+
+
+# Defines the structure of the Group objects.
+class Group:
+    gid = None
+    title = None
+    photo = None
+
+    def __init__(self, gid, title, photo):
+        self.gid = gid
+        self.title = title
+        self.photo = photo
 
 
 # This classes define and manage configuration files and stored data.
@@ -28,6 +63,7 @@ class Config:
             google_developer_console = None
             azure_key = None
 
+        frontend = None
         owner = None
         keys = Keys
         plugins = []
@@ -47,6 +83,7 @@ class Config:
                     keys.google_developer_console = config_json['keys']['google_developer_console']
                     keys.azure_key = config_json['keys']['azure_key']
 
+                    self.frontend = config_json['frontend']
                     self.owner = config_json['owner']
                     self.keys = keys
                     self.plugins = config_json['plugins']
@@ -80,6 +117,7 @@ class Config:
                     )
 
                     config_tuples = (
+                        ('frontend', self.frontend),
                         ('owner', self.owner),
                         ('keys', OrderedDict(keys_tuples)),
                         ('plugins', self.plugins),
@@ -169,31 +207,3 @@ class Message:
         self.date = datetime.now()
         self.reply_id = reply_id
         self.markup = markup
-
-
-# Defines the structure of the User objects.
-class User:
-    uid = None
-    first_name = None
-    last_name = None
-    username = None
-    photo = None
-
-    def __init__(self, uid, first_name, last_name, username, photo):
-        self.uid = uid
-        self.first_name = first_name
-        self.last_name = last_name
-        self.username = username
-        self.photo = photo
-
-
-# Defines the structure of the Group objects.
-class Group:
-    gid = None
-    title = None
-    photo = None
-
-    def __init__(self, gid, title, photo):
-        self.gid = gid
-        self.title = title
-        self.photo = photo

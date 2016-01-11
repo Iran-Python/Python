@@ -1,11 +1,10 @@
 from core.types import *
 import requests, magic, mimetypes, tempfile, os
-from core.frontend.bot_api import send_message
 
 
 def send_msg(m, content, type='text'):
     message = Message(m.receiver, m.sender, input, type)
-    send_message(message)
+    bot.f.send_message(message)
 
 
 def get_input(text):
