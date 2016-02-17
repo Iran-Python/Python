@@ -1,4 +1,4 @@
-# Polaris
+# Iran Python
 Multi-purpose telegram bot written in Python. I made this for personal use so I won't provide any support or install instructions.
 
 # WARNING
