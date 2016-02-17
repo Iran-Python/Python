@@ -21,3 +21,4 @@ Multi-purpose telegram bot written in Python. I made this for personal use so I 
 * Add RSS plugin.
 * Add LastFM plugin.
 * Add Reddit plugin.
+# By : Shahabambesik E M C Team Leader
